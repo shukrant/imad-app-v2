@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/airticle-one',function(req,res) {
-   res.sendFile(path.join(__dirname, 'ui', 'airticle-one.html')); 
+   res.sendFile(path.join(__dirname, 'ui', 'index.html')); 
 });
 
 app.get('/airticle-two',function(req,res) {
