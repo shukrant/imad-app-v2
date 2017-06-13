@@ -14,11 +14,11 @@ app.get('/airticle-one',function(req,res) {
 });
 
 app.get('/airticle-two',function(req,res) {
-   res.send("Airticle Two"); 
+   res.sendFile(path.join(__dirname, 'ui', 'airticle-two.html'));
 });
 
 app.get('/airticle-third',function(req,res) {
-   res.send("Airticle Third"); 
+   res.sendFile(path.join(__dirname, 'ui', 'airticle-third.html'));
 });
 
 app.get('/ui/style.css', function (req, res) {
