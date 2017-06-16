@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var airticles = {
-    'airticle-one' : {
+var articles = {
+    'article-one' : {
         title : "Airticle-one : Shukrant tyagi",
         heading : "Airticle-one",
         content : `<p>
@@ -14,7 +14,7 @@ var airticles = {
                </p>`
     
     },
-    'aititcle-two' : {
+    'artitcle-two' : {
         title : "Airticle-two : Shukrant tyagi",
         heading : "Airticle-two",
         content : `<p>
@@ -22,7 +22,7 @@ var airticles = {
                </p>`
     
     },
-    'airticle-third' : {
+    'article-third' : {
          title : "Airticle-third : Shukrant tyagi",
         heading : "Airticle-third",
         content : `<p>
@@ -68,17 +68,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/airticleName',function(req,res) {
-    var airticleName = req.params.airticleName ; 
-   res.send(createTemplate(airticles[airticleName]));
-});
-
-app.get('/airticle-two',function(req,res) {
-   res.sendFile(path.join(__dirname, 'ui', 'airticle-two.html'));
-});
-
-app.get('/airticle-third',function(req,res) {
-   res.sendFile(path.join(__dirname, 'ui', 'airticle-third.html'));
+app.get('/articleName',function(req,res) {
+    var articleName = req.params.articleName ; 
+   res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
