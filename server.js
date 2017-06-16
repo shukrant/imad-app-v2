@@ -6,15 +6,15 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-    'article-one' : {
-        title : "Airticle-one : Shukrant tyagi",
-        heading : "Airticle-one",
-        content : `<p>
+    'article-one':  {
+        title: 'Airticle-one : Shukrant tyagi',
+        heading: 'Airticle-one',
+        content: `<p>
                     Files on the sidebar represent the source code of your web app. These files are all actually saved in a git repository on your github account. This console allows you to edit these files, deploy your app, and save these files back to your github repository.
                </p>`
     
     },
-    'artitcle-two' : {
+    'artitcle-two': {
         title : "Airticle-two : Shukrant tyagi",
         heading : "Airticle-two",
         content : `<p>
@@ -22,7 +22,7 @@ var articles = {
                </p>`
     
     },
-    'article-third' : {
+    'article-third': {
          title : "Airticle-third : Shukrant tyagi",
         heading : "Airticle-third",
         content : `<p>
