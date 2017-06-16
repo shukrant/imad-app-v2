@@ -5,13 +5,30 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var airticleone = {
-    title : "Airticle-one : Shukrant tyagi",
-    heading : "Airticle-one",
-    content : `<p>
+var airticles = {
+    'airticle-one' : {
+        title : "Airticle-one : Shukrant tyagi",
+        heading : "Airticle-one",
+        content : `<p>
                     Files on the sidebar represent the source code of your web app. These files are all actually saved in a git repository on your github account. This console allows you to edit these files, deploy your app, and save these files back to your github repository.
                </p>`
     
+    },
+    'aititcle-two' : {
+        title : "Airticle-two : Shukrant tyagi",
+        heading : "Airticle-two",
+        content : `<p>
+                    Files on the sidebar represent the source code of your web app. These files are all actually saved in a git repository on your github account. This console allows you to edit these files, deploy your app, and save these files back to your github repository.
+               </p>`
+    
+    },
+    'airticle-third' : {
+         title : "Airticle-third : Shukrant tyagi",
+        heading : "Airticle-third",
+        content : `<p>
+                    Files on the sidebar represent the source code of your web app. These files are all actually saved in a git repository on your github account. This console allows you to edit these files, deploy your app, and save these files back to your github repository.
+               </p>`
+    }
 };
 
 function createTemplate(data) {
@@ -51,8 +68,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/airticle-one',function(req,res) {
-   res.send(createTemplate(airticleone));
+app.get('/airticleName',function(req,res) {
+    var airticleName = req.params.airticleName ; 
+   res.send(createTemplate(airticles[airticleName]));
 });
 
 app.get('/airticle-two',function(req,res) {
